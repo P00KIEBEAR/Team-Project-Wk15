@@ -8,7 +8,7 @@ const env = require('dotenv').config();
 const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const PORT = process.env.PORT || 3001;
 app.use(express.json());
 
 // BodyParser
@@ -71,7 +71,7 @@ sequelize.sync({ force: false })
   .then(function () {
     console.log('Database Connected');
 
-    app.listen(3001, function (err) {
+    app.listen(PORT, function (err) {
       if (!err) console.log('Connected at http://localhost:3001');
       else console.log(err);
     });
