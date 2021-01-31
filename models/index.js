@@ -1,6 +1,6 @@
 const User = require('./User');
 const Appointment = require('./Appointment');
-const Timeblock = require('./Time-block');
+// const Timeblock = require('./Time-block');
 
 Appointment.belongsTo(User, {
   foreignKey: 'user_id',
