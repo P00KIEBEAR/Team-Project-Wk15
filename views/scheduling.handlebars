@@ -15,18 +15,25 @@
             <div class="modal-content">
               <span class="close">&times;</span>
               <h1>Appointments for <span id="back-date"></span></h1>
-                  {{#each appointments}}
-              <div class="container">
-                <div>
-                  <p></p>
-                <span class="Appointments_date">{{Appointments_date}}</span> |
-                <span class="Appointments_time">{{Appointments_time}}:00</span> |
-                <span class="Appointments_text">{{Appointments_text}}</span>
-              </p>
-              </div>
-              <div><button type="submit">Add</button></div>
-              </div>
-                {{/each}}
+                <form class="new-appt-form">
+      <div class="field">
+      <label class="label" for="Appointments_time">Time</label>
+      <input class="input-appt" type="text" id="Appointments_time" name="Appointments_time" placeholder="Note: only 1-8 allowed"/>
+    </div><div class="field">
+      <label class="label" for="Appointments_date">Date</label>
+      <input class="input-appt" type="text" id="Appointments_date" name="Appointments_date" placeholder="ie: 15"/>
+    </div><div class="field">
+      <label class="label" for="Appointments_day">Day</label>
+      <input class="input-appt" type="text" id="Appointments_day" name="Appointments_day" placeholder="ie: Monday"/>
+    </div><div class="field">
+      <label class="label" for="Appointments_text">Text</label>
+      <input class="input-appt" type="text" id="Appointments_text" name="Appointments_text" placeholder="ie: MRI"/>
+    </div><div class="field">
+      <label class="label" for="Appointments_type">Type</label>
+      <input class="input-appt" type="text" id="Appointments_type" name="Appointments_type" placeholder="ie: Consult"/>
+    </div>
+    <div><button type="submit">Admin add appointment</button></div>
+    </form>
             </div>
           </div>
         </div>
@@ -56,25 +63,7 @@
       </div>
     </div>
     <h3>Create Appointments</h3>
-    <form class="new-appt-form">
-      <div class="field">
-      <label class="label" for="Appointments_time">Time</label>
-      <input class="input-appt" type="text" id="Appointments_time" name="Appointments_time" placeholder="Note: only 1-8 allowed"/>
-    </div><div class="field">
-      <label class="label" for="Appointments_date">Date</label>
-      <input class="input-appt" type="text" id="Appointments_date" name="Appointments_date" placeholder="ie: 15"/>
-    </div><div class="field">
-      <label class="label" for="Appointments_day">Day</label>
-      <input class="input-appt" type="text" id="Appointments_day" name="Appointments_day" placeholder="ie: Monday"/>
-    </div><div class="field">
-      <label class="label" for="Appointments_text">Text</label>
-      <input class="input-appt" type="text" id="Appointments_text" name="Appointments_text" placeholder="ie: MRI"/>
-    </div><div class="field">
-      <label class="label" for="Appointments_type">Type</label>
-      <input class="input-appt" type="text" id="Appointments_type" name="Appointments_type" placeholder="ie: Consult"/>
-    </div>
-    <div><button type="submit">Admin add appointment</button></div>
-    </form>
+  
   </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/javascript/scheduling.js"></script>

@@ -1,25 +1,25 @@
 let info = [];
 
-async function newApptHandler(event) {
-  event.preventDefault();
+// async function newApptHandler(event) {
+//   event.preventDefault();
 
-  var appointments = await fetch(`/api/schedule/all`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(appointments),
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      info = data;
-      console.log(data[0].Appointments_date);
-      console.log(data);
-    });
-}
-document.getElementById('myBtn').addEventListener('click', newApptHandler);
+//   var appointments = await fetch(`/api/schedule/all`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(appointments),
+//   })
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       info = data;
+//       console.log(data[0].Appointments_date);
+//       console.log(data);
+//     });
+// }
+// document.getElementById('myBtn').addEventListener('click', newApptHandler);
 
 async function adminApptHandler(event) {
   event.preventDefault();
