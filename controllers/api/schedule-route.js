@@ -52,7 +52,7 @@ router.get('/', (req, res) => {
         model: User,
         attributes: ['username'],
       },
-      Timeblock,
+      // Timeblock,
     ],
   })
     .then(appointments => {
