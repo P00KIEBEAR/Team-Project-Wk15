@@ -1,35 +1,52 @@
-async function newFormHandler(event) {
+let info = [];
+
+async function newApptHandler(event) {
   event.preventDefault();
 
-  const Appointments_time = document.querySelector(
-    'span[class="Appointments_time"]'
-  ).value;
-  const Appointments_text = document.querySelector(
-    'span[class="Appointments_text"]'
-  ).value;
-  const Appointments_type = document.querySelector(
-    'span[class="Appointments_type"]'
-  ).value;
+  // const Appointments_time = document.querySelector(
+  //   'span[class="Appointments_time"]'
+  // ).value;
+  // const Appointments_text = document.querySelector(
+  //   'span[class="Appointments_text"]'
+  // ).value;
+  // const Appointments_date = document.querySelector(
+  //   'span[class="Appointments_date"]'
+  // ).value;
 
-  const response = await fetch(`/api/schedule`, {
-    method: 'POST',
-    body: JSON.stringify({
-      Appointments_time,
-      Appointments_text,
-      Appointments_type,
-    }),
-    // headers: {
-    //   'Content-Type': 'application/json',
-    // },
-  });
+  // const Appointments_date = window.location.toString().split('/')[
+  //   window.location.toString().split('/').length - 1
+  // ];
+  // const Appointments_time = window.location.toString().split('/')[
+  //   window.location.toString().split('/').length - 1
+  // ];
+  // const Appointments_text = window.location.toString().split('/')[
+  //   window.location.toString().split('/').length - 1
+  // ];
+
+  var appointments = await fetch(`/api/schedule/all`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(appointments),
+    // Appointments_date,
+    // Appointments_time,
+    // Appointments_text,
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      info = data;
+      console.log(data[0].Appointments_date);
+      console.log(data);
+    });
 
   // if (response.ok) {
-  //   document.location.replace('/dashboard');
+  //   document.location.reload();
   // } else {
   //   alert(response.statusText);
   // }
 }
 
-// document
-//   .querySelector('.new-post-form')
-//   .addEventListener('submit', newFormHandler);
+document.getElementById('myBtn').addEventListener('click', newApptHandler);
