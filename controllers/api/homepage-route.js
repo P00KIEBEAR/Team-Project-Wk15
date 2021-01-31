@@ -22,14 +22,14 @@ router.get('/', async (req, res) => {
           appointment.get({ plain: true })
         )
       )
-      : null;
+
 
     // console.log(appointments)
 
     res.render('homepage', {
-      appointments,
-      loggedIn: true,
-    });
+        appointments,
+        loggedIn: true,
+      });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
