@@ -4,7 +4,7 @@ const { Appointment, Timeblock, User } = require('../../models');
 
 router.post('/all', async (req, res) => {
   const {
-    Appointments_time,
+    // Appointments_time,
     Appointments_date,
     Appointments_day,
     Appointments_text,
@@ -12,7 +12,7 @@ router.post('/all', async (req, res) => {
     user_id,
   } = req.body;
   const appointments = await Appointment.create({
-    Appointments_time: Appointments_time,
+    // Appointments_time: Appointments_time,
     Appointments_date: Appointments_date,
     Appointments_day: Appointments_day,
     Appointments_text: Appointments_text,

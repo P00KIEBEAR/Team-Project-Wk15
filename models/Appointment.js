@@ -15,7 +15,7 @@ Appointment.init(
     //--Time
     Appointments_time: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'Timeblock',
         key: 'id',
