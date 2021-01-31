@@ -62,7 +62,6 @@ async function onSignIn(googleUser) {
     });
     if (response.ok) {
       console.log(response);
-      debugger
       document.location.replace('/api/homepage');
     }
     else {
