@@ -7,32 +7,30 @@ router.get('/', (req, res) => {
   ; console.log(req.session.user_id);
   Appointment.findAll({
 
-    where: {
-      user_id: req.session.user_id,
-
-    },
-    attributes: ['id',
-      'Appointments_time',
-      'Appointments_date',
-      'Appointments_day',
-      'Appointments_text',
-      'user_id',
-    ],
     include:
     {
-      model: User, attributes: ['username'],
+      model: User,
+      attributes: ['username']
     }, Timeblock,
+
 
   })
     .then(appointments => {
-      appointments = appointments.map(appointment =>
-        appointment.get({ plain: true }));
-      // console.log(appointments)
+      if (appointments) {
+        const appts = appointments.map(appointment =>
+          appointment.get({ plain: true }));
 
-      res.render('homepage', {
-        appointments, loggedIn: true,
+        console.log(appts[0])
+        res.render('homepage', {
+          appts, loggedIn: true,
 
-      });
+        });
+      }
+      else {
+        res.render('homepage', {
+          loggedIn: true,
+        })
+      }
     })
 
     .catch(err => {

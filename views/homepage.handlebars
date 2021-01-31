@@ -1,6 +1,6 @@
 
 
-              <h1>Appointments for <span id="back-date"></span></h1>
+              {{!-- <h1>Appointments for <span id="back-date"></span></h1>
               <div class="container">
                 <div><p>
                 <span class="Appointments_time">8:00AM</span> |
@@ -24,4 +24,20 @@
                 <span class="Appointments_text">Surgery to fix broken leg</span>
               </p>
               </div>
-              </div>
+              </div> --}}
+              
+{{#if appts.length}}
+<section>
+  <h2>Your Appointments</h2>
+  <ol>
+    {{#each appts as |appt|}}
+    <li>
+          <a {{appt.id}}" class="appt"> {{appt.Appointments_date}}</a>
+           <a {{appt.id}}" class="appt"> {{appt.Appointments_day}}</a>
+            <a {{appt.id}}" class="appt"> {{appt.Appointments_text}}</a>
+             <a {{appt.id}}" class="appt"> {{appt.Appointments_type}}</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
