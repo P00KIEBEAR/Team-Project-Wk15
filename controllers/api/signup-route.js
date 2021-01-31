@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log(req.body)
   User.create({
     username: req.body.username,
     password: req.body.password,
