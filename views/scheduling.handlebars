@@ -15,16 +15,18 @@
             <div class="modal-content">
               <span class="close">&times;</span>
               <h1>Appointments for <span id="back-date"></span></h1>
+                  {{#each appointments}}
               <div class="container">
-                <div><p>
-                <span class="Appointments_time">Time</span> |
-                <span class="Appointments_type">Type</span> |
-                <span class="Appointments_text">Text</span>
+                <div>
+                  <p></p>
+                <span class="Appointments_date">{{Appointments_date}}</span> |
+                <span class="Appointments_time">{{Appointments_time}}:00</span> |
+                <span class="Appointments_text">{{Appointments_text}}</span>
               </p>
               </div>
               <div><button type="submit">Add</button></div>
               </div>
-              
+                {{/each}}
             </div>
           </div>
         </div>

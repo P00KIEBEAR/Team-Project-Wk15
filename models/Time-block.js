@@ -12,10 +12,10 @@ Timeblock.init(
       primaryKey: true,
       autoIncrement: true
     },
-  time: {
-      type: DataTypes.STRING,
-      allowNull: false,
-  }
+    time: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
   },
   {
     sequelize,

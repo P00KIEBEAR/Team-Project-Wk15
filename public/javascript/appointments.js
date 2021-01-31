@@ -38,6 +38,7 @@ async function newApptHandler(event) {
     })
     .then(function (data) {
       info = data;
+      console.log(data[0].Appointments_date);
       console.log(data);
     });
 

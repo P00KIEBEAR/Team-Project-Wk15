@@ -1,5 +1,4 @@
 
-
 module.exports = (app, passport) => {
 
   // GET /auth/google

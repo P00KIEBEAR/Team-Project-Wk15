@@ -3,7 +3,6 @@
 const users = []
 async function loginFormHandler(event) {
   event.preventDefault();
-  console.log("hi")
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
@@ -22,7 +21,7 @@ async function loginFormHandler(event) {
     console.log(response)
     if (response.ok) {
       //debugger
-      document.location.replace('/api/schedule');
+      document.location.replace('/api/homepage');
     } else {
       alert((await response.json()).message);
     }

@@ -1,16 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Appointments extends Model { }
+class Appointment extends Model {}
 
-Appointments.init(
+Appointment.init(
   {
     //--ID
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     //--Time
     Appointments_time: {
@@ -18,50 +18,50 @@ Appointments.init(
       allowNull: false,
       references: {
         model: 'Timeblock',
-        key: 'id'
-      }
+        key: 'id',
+      },
     },
     // --appt date
     Appointments_date: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     // app day
-    Appointments_day:{
+    Appointments_day: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     //--appt message
     Appointments_text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
-      }
+        len: [1],
+      },
     },
     //--appointment type
     Appointments_type: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
-      }
+        len: [1],
+      },
     },
     //--ID of user(foreign key)
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id'
-      }
+        key: 'id',
+      },
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Appointments'
+    modelName: 'Appointments',
   }
 );
 
-module.exports = Appointments;
+module.exports = Appointment;
