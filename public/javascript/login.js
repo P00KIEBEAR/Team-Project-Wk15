@@ -81,10 +81,5 @@ async function onSignIn(googleUser) {
       }
     }
   }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> main
 }
 
