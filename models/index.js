@@ -21,4 +21,4 @@ User.hasMany(Appointment, {
 //   onDelete: 'SET NULL',
 // });
 
-module.exports = { User, Appointment, Timeblock };
+module.exports = { User, Appointment, };
