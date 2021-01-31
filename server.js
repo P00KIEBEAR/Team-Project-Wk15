@@ -55,16 +55,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Load passport strategies
+require('./config/passport/passport.js')(passport, models.user);
 
 // Routes
-
 app.use(require('./controllers/'));
 app.use(function (req, res, next) {
   res.status(404).send('Cant find route');
 
 })
-// Load passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+
 
 // Sync Database
 sequelize.sync({ force: false })

@@ -61,7 +61,7 @@ a:hover {
 }
 
 .index-landing-page {
-  background-image: url("../images/bg-test.jpg");
+  background-image: url('../images/bg-test.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -80,7 +80,7 @@ a:hover {
   margin: 2em auto;
   border-radius: 1em;
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.12);
-  display: flex; 
+  display: flex;
 }
 
 .index-features {
@@ -349,13 +349,17 @@ button:focus {
   cursor: pointer;
 }
 
+.input-appt {
+  border: none;
+}
+
 footer {
   /* border-top: 1px solid #212121; */
   background-color: #d3d3d3;
   display: flex;
   justify-content: center;
   color: #212121;
-  font-size: .8em;
+  font-size: 0.8em;
   font-style: italic;
   padding: 3%;
 }

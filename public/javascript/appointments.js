@@ -3,35 +3,12 @@ let info = [];
 async function newApptHandler(event) {
   event.preventDefault();
 
-  // const Appointments_time = document.querySelector(
-  //   'span[class="Appointments_time"]'
-  // ).value;
-  // const Appointments_text = document.querySelector(
-  //   'span[class="Appointments_text"]'
-  // ).value;
-  // const Appointments_date = document.querySelector(
-  //   'span[class="Appointments_date"]'
-  // ).value;
-
-  // const Appointments_date = window.location.toString().split('/')[
-  //   window.location.toString().split('/').length - 1
-  // ];
-  // const Appointments_time = window.location.toString().split('/')[
-  //   window.location.toString().split('/').length - 1
-  // ];
-  // const Appointments_text = window.location.toString().split('/')[
-  //   window.location.toString().split('/').length - 1
-  // ];
-
   var appointments = await fetch(`/api/schedule/all`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(appointments),
-    // Appointments_date,
-    // Appointments_time,
-    // Appointments_text,
   })
     .then(function (response) {
       return response.json();
@@ -41,12 +18,49 @@ async function newApptHandler(event) {
       console.log(data[0].Appointments_date);
       console.log(data);
     });
+}
+document.getElementById('myBtn').addEventListener('click', newApptHandler);
 
-  // if (response.ok) {
-  //   document.location.reload();
-  // } else {
-  //   alert(response.statusText);
-  // }
+async function adminApptHandler(event) {
+  event.preventDefault();
+
+  const Appointments_time = document.querySelector(
+    'input[name="Appointments_time"]'
+  ).value;
+  const Appointments_date = document.querySelector(
+    'input[name="Appointments_date"]'
+  ).value;
+  const Appointments_day = document.querySelector(
+    'input[name="Appointments_day"]'
+  ).value;
+  const Appointments_text = document.querySelector(
+    'input[name="Appointments_text"]'
+  ).value;
+  const Appointments_type = document.querySelector(
+    'input[name="Appointments_type"]'
+  ).value;
+
+  const response = await fetch(`/api/schedule/all`, {
+    method: 'POST',
+    body: JSON.stringify({
+      Appointments_time,
+      Appointments_date,
+      Appointments_day,
+      Appointments_text,
+      Appointments_type,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    document.location.replace('/api/schedule');
+  } else {
+    alert(response.statusText);
+  }
 }
 
-document.getElementById('myBtn').addEventListener('click', newApptHandler);
+document
+  .querySelector('.new-appt-form')
+  .addEventListener('submit', adminApptHandler);

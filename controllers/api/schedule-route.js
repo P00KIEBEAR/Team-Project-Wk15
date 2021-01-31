@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Appointment, Timeblock, User } = require('../../models');
 //routes will use /api/schedule/ {route}
 
-router.post('/', async (req, res) => {
+router.post('/all', async (req, res) => {
   const {
     Appointments_time,
     Appointments_date,
@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     Appointments_type,
     user_id,
   } = req.body;
-  const appt = await Appointment.create({
+  const appointments = await Appointment.create({
     Appointments_time: Appointments_time,
     Appointments_date: Appointments_date,
     Appointments_day: Appointments_day,
@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     Appointments_type: Appointments_type,
     user_id,
   })
-    .then(dbAppointmentData => res.json(dbAppointmentData))
+    .then(appointments => res.json(appointments))
     .catch(err => {
       console.log(err);
       res.status(400).json(err);
