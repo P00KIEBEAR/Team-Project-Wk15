@@ -14,45 +14,45 @@ Appointment.init(
     },
     //--Time
     Appointments_time: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Timeblock',
-        key: 'id',
-      },
-    },
-    // --appt date
-    Appointments_date: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    // app day
-    Appointments_day: {
       type: DataTypes.STRING,
       allowNull: false,
+      // references: {
+      //   model: 'Timeblock',
+      //   key: 'id',
     },
-    //--appt message
-    Appointments_text: {
-      type: DataTypes.STRING,
-      allowNull: false,
+  },
+  // --appt date
+  Appointments_date: {
+  type: DataTypes.INTEGER,
+  allowNull: false,
+},
+  // app day
+  Appointments_day: {
+  type: DataTypes.STRING,
+  allowNull: false,
+},
+  //--appt message
+  Appointments_text: {
+  type: DataTypes.STRING,
+  allowNull: false,
 
 
-    },
-    //--appointment type
-    Appointments_type: {
-      type: DataTypes.STRING,
-      allowNull: false,
+},
+  //--appointment type
+  Appointments_type: {
+  type: DataTypes.STRING,
+  allowNull: false,
 
 
-    },
-    //--ID of user(foreign key)
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
+},
+  //--ID of user(foreign key)
+  user_id: {
+  type: DataTypes.INTEGER,
+  references: {
+    model: 'user',
+    key: 'id',
+  },
+},
   },
   {
     sequelize,
