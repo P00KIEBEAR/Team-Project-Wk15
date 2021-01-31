@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Appointment extends Model {}
+class Appointment extends Model { }
 
 Appointment.init(
   {
@@ -35,17 +35,15 @@ Appointment.init(
     Appointments_text: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1],
-      },
+
+
     },
     //--appointment type
     Appointments_type: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1],
-      },
+
+
     },
     //--ID of user(foreign key)
     user_id: {
