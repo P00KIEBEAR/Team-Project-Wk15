@@ -16,10 +16,10 @@ Appointment.init(
     Appointments_time: {
       type: DataTypes.STRING,
       allowNull: false,
-      // references: {
-      //   model: 'Timeblock',
-      //   key: 'id',
-      // },
+      references: {
+        model: 'Timeblock',
+        key: 'id',
+      },
     },
     // --appt date
     Appointments_date: {

@@ -1,6 +1,6 @@
 const User = require('./User');
 const Appointment = require('./Appointment');
-// const Timeblock = require('./Time-block');
+const Timeblock = require('./Time-block');
 
 Appointment.belongsTo(User, {
   foreignKey: 'user_id',
@@ -12,13 +12,13 @@ User.hasMany(Appointment, {
   onDelete: 'SET NULL',
 });
 
-// Timeblock.hasMany(Appointment, {
-//   foreignKey: 'appointments_time',
-//   onDelete: 'SET NULL',
-// });
-// Appointment.belongsTo(Timeblock, {
-//   foreignKey: 'appointments_time',
-//   onDelete: 'SET NULL',
-// });
+Timeblock.hasMany(Appointment, {
+  foreignKey: 'appointments_time',
+  onDelete: 'SET NULL',
+});
+Appointment.belongsTo(Timeblock, {
+  foreignKey: 'appointments_time',
+  onDelete: 'SET NULL',
+});
 
-module.exports = { User, Appointment, };
+module.exports = { User, Appointment, Timeblock };
