@@ -55,7 +55,7 @@ async function adminApptHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/api/schedule');
+    document.location.replace('/api/homepage');
   } else {
     alert(response.statusText);
   }
