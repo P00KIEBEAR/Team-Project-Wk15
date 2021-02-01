@@ -21,7 +21,7 @@ async function loginFormHandler(event) {
     console.log(await response.json())
     if (response.ok) {
       //debugger
-      //document.location.replace('/api/homepage');
+      document.location.replace('/api/homepage');
     } else {
       alert((await response.json()).message);
     }
