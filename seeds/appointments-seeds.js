@@ -1,3 +1,5 @@
+const { Appointment } = require("../models");
+
 const appointmentdata = [
   {
     Appointments_time: 2,
@@ -41,5 +43,5 @@ const appointmentdata = [
   },
 ];
 
-const seedAppointments = () => appointmentdata.bulkCreate(appointmentdata);
+const seedAppointments = () => Appointment.bulkCreate(appointmentdata);
 module.exports = seedAppointments;
