@@ -33,10 +33,11 @@
   <ol>
     {{#each appts as |appt|}}
     <li>
-      <a {{appt.id}}" class="appt"> {{appt.Appointments_time}}:00</a>
+        <a {{appt.id}}" class="appt"> {{appt.Appointments_day}}  the</a>
           <a {{appt.id}}" class="appt"> {{appt.Appointments_date}}</a>
-           <a {{appt.id}}" class="appt"> {{appt.Appointments_day}}</a>
-            <a {{appt.id}}" class="appt"> {{appt.Appointments_text}}</a>
+         
+           <a {{appt.id}}" class="appt"> @ {{appt.Appointments_time}}:00</a>
+            <a {{appt.id}}" class="appt">For {{appt.Appointments_text}}</a>
              <a {{appt.id}}" class="appt"> {{appt.Appointments_type}}</a>
     </li>
     {{/each}}
