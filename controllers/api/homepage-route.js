@@ -7,9 +7,9 @@ router.get('/', (req, res) => {
 
   let username = req.session.username
   Appointment.findAll({
-    // where: {
-    //   user_id: req.session.user_id,
-    // },
+    where: {
+      user_id: req.session.user_id,
+    },
     attributes: [
       'id',
       'Appointments_time',
