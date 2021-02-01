@@ -41,5 +41,5 @@ const appointmentdata = [
   },
 ];
 
-const seedPosts = () => Appointment.bulkCreate(appointmentdata);
+const seedPosts = () => appointmentdata.bulkCreate(appointmentdata);
 module.exports = seedPosts;
