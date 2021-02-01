@@ -13,11 +13,11 @@ User.hasMany(Appointment, {
 });
 
 Timeblock.hasMany(Appointment, {
-  foreignKey: 'appointments_time',
+  foreignKey: 'Appointments_time',
 
 });
 Appointment.belongsTo(Timeblock, {
-  foreignKey: 'appointments_time',
+  foreignKey: 'Appointments_time',
 
 });
 
