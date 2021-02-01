@@ -12,7 +12,7 @@ router.post('/all', async (req, res) => {
     Appointments_day,
     Appointments_text,
     Appointments_type,
-
+    user_id,
   } = req.body;
   const appointments = await Appointment.create({
     Appointments_time: Appointments_time,
