@@ -4,13 +4,17 @@ const { Appointment, Timeblock, User } = require('../../models');
 
 
 router.get('/', (req, res) => {
-  ; console.log(req.session.user_id);
-  Appointment.findAll({
 
+  let username = req.session.username
+  Appointment.findAll({
+    // where: {
+    //   user_id: req.session.user_id,
+    // },
     include:
     {
       model: User,
-      attributes: ['username']
+      attributes: ['username'
+        , 'id',]
     }, Timeblock,
 
 
@@ -19,9 +23,9 @@ router.get('/', (req, res) => {
       if (appointments) {
         const appts = appointments.map(appointment =>
           appointment.get({ plain: true }));
-
-        console.log(appts[0])
+        console.log(username)
         res.render('homepage', {
+          username,
           appts, loggedIn: true,
 
         });

@@ -3,13 +3,14 @@ const { Appointment, Timeblock, User } = require('../../models');
 //routes will use /api/schedule/ {route}
 
 router.post('/all', async (req, res) => {
+  console.log(req.session.user_id);
   const {
     Appointments_time,
     Appointments_date,
     Appointments_day,
     Appointments_text,
     Appointments_type,
-    user_id,
+
   } = req.body;
   const appointments = await Appointment.create({
     Appointments_time: Appointments_time,
@@ -17,7 +18,7 @@ router.post('/all', async (req, res) => {
     Appointments_day: Appointments_day,
     Appointments_text: Appointments_text,
     Appointments_type: Appointments_type,
-    user_id,
+    user_id: req.session.user_id,
   })
     .then(appointments => res.json(appointments))
     .catch(err => {
@@ -70,17 +71,17 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/all', async (req, res) => {
-  const appointments = await Appointment.findAll({
-    // include: [
-    //   {
-    //     model: User,
-    //   },
-    // ],
-  });
-  console.log(appointments[1].Appointments_time);
-  res.json(appointments);
-});
+// router.get('/all', async (req, res) => {
+//   const appointments = await Appointment.findAll({
+//     // include: [
+//     //   {
+//     //     model: User,
+//     //   },
+//     // ],
+//   });
+//   console.log(appointments[1].Appointments_time);
+//   res.json(appointments);
+// });
 
 router.get('/:user', async (req, res) => {
   const { user } = req.params;

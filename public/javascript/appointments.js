@@ -48,6 +48,7 @@ async function adminApptHandler(event) {
       Appointments_day,
       Appointments_text,
       Appointments_type,
+
     }),
     headers: {
       'Content-Type': 'application/json',
