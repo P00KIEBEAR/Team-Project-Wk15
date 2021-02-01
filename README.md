@@ -2,7 +2,8 @@
 
 With a pandemic all around the world and social anxiety at an all time peak, we need a scheduling app to save us. To help us resist any social interaction, we have an app you can use online with a desktop or mobile device so you won't need to go in or even call to get an appointment. How does it work? Just go to https://team-project-wk15.herokuapp.com/ signup or log in and see available dates for you to schedule and you're all set for your appointment!
 
-![screenshot](https://github.com/kara-krzystan/Team-Project-Wk15/blob/main/public/images/screenshot_landing_page.png)
+![screenshot](https://github.com/P00KIEBEAR/Team-Project-Wk15/blob/main/public/images/screenshot15.png)
+public\images\screenshot15.png
 
 ## Installation
 
