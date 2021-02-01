@@ -13,8 +13,8 @@ Timeblock.init(
       autoIncrement: true
     },
     time: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   },
   {
